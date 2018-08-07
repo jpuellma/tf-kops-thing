@@ -1,5 +1,5 @@
 
-output "kops.details" {
+output "aws_iam_group.kops details" {
   value = {
     arn = "${aws_iam_group.kops.arn}"
     id = "${aws_iam_group.kops.id}"

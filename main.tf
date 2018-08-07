@@ -50,3 +50,20 @@ resource "aws_iam_group_membership" "kops" {
 resource "aws_iam_access_key" "kops" {
   user = "${aws_iam_user.kops.name}"
 }
+
+
+// S3 Storage for cluster state
+resource "aws_s3_bucket" "cluster-state-store" {
+  bucket = "${var.cluster_name}-jpuellma-net-state-store"
+  acl    = "private"
+  region = "${var.region}"
+
+  tags {
+    Name        = "Cluster State Store Bucket"
+    Environment = "Dev"
+  }
+
+  versioning {
+    enabled = true
+  }
+}
