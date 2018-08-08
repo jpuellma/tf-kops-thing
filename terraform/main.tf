@@ -15,3 +15,9 @@ provider "aws" {
 module "kops" {
   source = "./modules/kops"
 }
+
+
+// module created by kops:
+module "kubernetes" {
+  source = "./modules/kubernetes"
+}
