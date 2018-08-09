@@ -1,5 +1,5 @@
 This module was created by executing
-```apacheconfig
+```bash
 kops create cluster \
 --state=s3://jpuellma-net-general/kops-state \
 --out=./modules/kubernetes/ \
